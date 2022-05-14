@@ -1,6 +1,6 @@
 var myVar = "Meo Meo";
 function myFunc1(){
-    document.getElementById("animal").innerText = variable;
+    document.getElementById("animal").innerText = myVar;
 }
 
 function myFunc2(){
