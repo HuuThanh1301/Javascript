@@ -16,7 +16,7 @@ const myFunc1 = () => {
     employee.role.toLocaleLowerCase() !== 'pm');
 
     do{
-        employee.experience = prompt("Nhap tham nien nhan vien: ");
+        employee.experience = prompt("Nhap tham nien nhan vien (nhap so tu 0 - 10): ");
         employee.experience = parseInt(employee.experience);
         console.log(typeof employee.experience);
         console.log(employee.experience);
