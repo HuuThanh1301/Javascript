@@ -132,5 +132,13 @@ const myFunc3 = () => {
             }
         }
     }
-    alert(myArr);
+    
+
+    let sum = 0;
+    for(let j = 0; j < myArr.length; j++){
+        sum += myArr[j];
+    }
+
+    alert("Mang sau khi sap xep: " + myArr +"\nTong cac phan tu cua mang: " + sum);
+
 }
