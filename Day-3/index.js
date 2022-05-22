@@ -125,7 +125,7 @@ const myFunc3 = () => {
     const myArr = [2,3, 5, 6, 3, 6, 8, 7, 3, 1, 2, 5, 7, 8, 4];
     for(let i = 0; i < myArr.length - 1; i++){
         for(let j = 0; j < myArr.length - i - 1; j++){
-            if(myArr[j] > myArr[j+1]){
+            if(myArr[j] < myArr[j+1]){
                 let temp = myArr[j];
                 myArr[j] = myArr[j+1];
                 myArr[j+1] = temp;
