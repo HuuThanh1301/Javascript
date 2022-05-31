@@ -79,7 +79,7 @@ const checkVietlott = () => {
     }
     console.log("Ket qua vietlott: " + vietlott_result);
     console.log("Ma so xo cua ban: "+ user_result)
-    console.log("Number of duplicates" + duplicate);
+    console.log("Number of duplicates " + duplicate);
 
     switch(duplicate){
         case 2:
