@@ -1,0 +1,19 @@
+#container{
+    width: 100vw;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+#quiz{
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid rgb(42, 126, 98);
+    padding: 16px;
+}
+#quiz__content{
+    margin-bottom: 12px;
+}
+#quiz__footer{
+    display: flex;
+    justify-content: space-around;
+}

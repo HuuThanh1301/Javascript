@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Table</title>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <button onclick="createTable()">Create a table</button>
+        <table id="myTable" style="display:none">
+            <tr>
+                <th>Name Shop</th>
+                <th>Address</th>
+                <th>Charged Of</th>
+                <th>Phone Number</th>
+                <th>Products</th>
+            </tr>
+        </table>
+        <script>
+            const listShop = [ 
+            { 
+                nameShop: 'corgiShop', 
+                address: '29 Lê Quang Sung', 
+                chargedOf: 'Lộc', 
+                phoneNumber: 935964949, 
+                products: [ 
+                    { sku: 10001, name: 'sản phẩm 1', price: 10 }, 
+                    { sku: 10002, name: 'sản phẩm 2', price: 100 }, 
+                ], 
+            }, 
+            { 
+                nameShop: 'huskyShop', 
+                address: '29 Quang Trung', 
+                chargedOf: 'Lộc 2', 
+                phoneNumber: 9359622234, 
+                products: [ 
+                    { sku: 10001, name: 'sản phẩm 3', price: 10 }, 
+                    { sku: 10002, name: 'sản phẩm 2', price: 100 }, 
+                ], 
+            }, 
+            { 
+                nameShop: 'shibaShop', 
+                address: '29 Lê lợi', 
+                chargedOf: 'Lộc 3', 
+                phoneNumber: 9344622234, 
+                products: [ 
+                    { sku: 10001, name: 'sản phẩm 2', price: 10 }, 
+                    { sku: 10002, name: 'sản phẩm 5', price: 100 }, 
+                ], 
+            }, 
+            ]; 
+            // Make sure to load the content in listShop only once
+            let isFinished = false;
+            const createTable = () => {
+                const table = document.getElementById("myTable");
+                // Loop through listShop array
+                if(isFinished === false){
+                    for(let i = 0; i < listShop.length; i++){
+                        var row = table.insertRow(i+1);
+                        // Loop through each property of objects in listShop
+                        for(let k = 0; k < Object.keys(listShop[i]).length; k++){
+                            var cell = row.insertCell(k);
+                            // Handle the case when last property value is an array
+                            if(k === Object.keys(listShop[i]).length - 1){
+                                const lastKey = Object.keys(listShop[i])[k];
+                                let product_array = listShop[i][lastKey];
+                                let text = "";
+                                for(let l = 0; l < product_array.length; l++){
+                                    for(let x = 0; x < Object.keys(product_array[l]).length ; x++){
+                                        if(x === Object.keys(product_array[l]).length - 1){
+                                            text += Object.values(product_array[l])[x];
+                                        }
+                                        else{
+                                            text += Object.values(product_array[l])[x] + " - ";
+                                        }
+                                    }
+                                    text += "<br>"
+                                }
+                                cell.innerHTML = text;
+                            }
+                            else{
+                                cell.innerHTML = Object.values(listShop[i])[k];
+                            }
+                        }
+                        isFinished = true;
+                    }
+                }
+                
+                // Show and hide the content of table everytime button is clicked
+                if (table.style.display !== "none") {
+                    table.style.display = "none";
+                } else {
+                    table.style.display = "table";
+                }
+            }
+        </script>
+    </body>
+</html>
