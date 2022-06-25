@@ -4,17 +4,17 @@
         <link rel="stylesheet" href="./index.css">
     </head>
     <body>
-        <button onclick="createTable()">Create a table</button>
-        <table id="myTable" style="display:none">
-            <tr>
+        <button onclick="drawTable()">Create a table</button>
+        <table id="myTable">
+            <!-- <tr>
                 <th>Name Shop</th>
                 <th>Address</th>
                 <th>Charged Of</th>
                 <th>Phone Number</th>
                 <th>Products</th>
-            </tr>
+            </tr> -->
         </table>
-        <script>
+        <!-- <script>
             const listShop = [ 
             { 
                 nameShop: 'corgiShop', 
@@ -91,6 +91,64 @@
                     table.style.display = "table";
                 }
             }
+        </script> -->
+
+        <script>
+            const listShop = [ 
+            { 
+                nameShop: 'corgiShop', 
+                address: '29 Lê Quang Sung', 
+                chargedOf: 'Lộc', 
+                phoneNumber: 935964949, 
+                products: [ 
+                    { sku: 10001, name: 'sản phẩm 1', price: 10 }, 
+                    { sku: 10002, name: 'sản phẩm 2', price: 100 }, 
+                ], 
+            }, 
+            { 
+                nameShop: 'huskyShop', 
+                address: '29 Quang Trung', 
+                chargedOf: 'Lộc 2', 
+                phoneNumber: 9359622234, 
+                products: [ 
+                    { sku: 10001, name: 'sản phẩm 3', price: 10 }, 
+                    { sku: 10002, name: 'sản phẩm 2', price: 100 }, 
+                ], 
+            }, 
+            { 
+                nameShop: 'shibaShop', 
+                address: '29 Lê lợi', 
+                chargedOf: 'Lộc 3', 
+                phoneNumber: 9344622234, 
+                products: [ 
+                    { sku: 10001, name: 'sản phẩm 2', price: 10 }, 
+                    { sku: 10002, name: 'sản phẩm 5', price: 100 }, 
+                ], 
+            }, 
+            ]; 
+
+  
+            // listShop.map(x => x.products = x.products.map(element => element = element.sku + "-" + element.name + "-" + element.price).join("<br/>"));
+            // console.log(listShop);
+
+            let htmlTable = `<tr><th>Name Shop</th> <th>Address</th> <th>Charged Of</th><th>Phone Number</th> <th>Products</th> </tr>`;
+            const createTable = () => {
+                for(let x in listShop){
+                    listShop[x].products = listShop[x].products.map(item => item.sku + " - " + item.name + " - " + item.price).join("<br/>");
+                }
+
+                console.log(listShop);
+
+                // let htmlTable = document.getElementById("myTable").innerHTML;
+                for(let element in listShop){
+                    htmlTable += `<tr> <td>${listShop[element].nameShop} </td> <td>${listShop[element].address}</td> <td>${listShop[element].chargedOf}</td> <td>${listShop[element].phoneNumber}</td> <td>${listShop[element].products}</td> </tr>`
+                }
+            }
+
+            const drawTable=()=>{
+                document.getElementById("myTable").innerHTML = htmlTable;
+            }
+
         </script>
     </body>
 </html>
