@@ -1,108 +1,70 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-  background: -webkit-gradient(linear, left top, right top, from(#3a7bd5), to(#3a6073));
-  background: linear-gradient(to right, #3a7bd5, #3a6073);
-  font-family: sans-serif;
-  height: 100vh;
+.layout{
+    width: 100vw;
+    height: 100vh;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: none;
 }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.studentForm{
+    width: 25%;
+    height: 20%;
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.studentForm > div{
+    display: flex;
+    margin-bottom: 15px;
+}
+label{
+    margin-right: 20px;
+}
+input{
+    width: 100%;
+}
+#myButtons{
+    display: flex;
+    justify-content: center;
+}
+#submit{
+    margin-right: 10px;
+}
+#logout{
+    margin-left: 10px;
 }
 
-.center button {
-  padding: 10px 20px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #222;
-  background: #f5f5f5;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 5px;
+th, table, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 15px;
 }
 
-.popup {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%) scale(1.25);
-          transform: translate(-50%, -50%) scale(1.25);
-  width: 380px;
-  padding: 20px 30px;
-  -webkit-box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
-          box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
-  background: #fff;
-  border-radius: 10px;
-  top: -150%;
-  opacity: 0;
+#modal{
+    width: 20%;
+    height: 15%;
+    border: 1px solid black;
+    padding: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-.popup.active {
-  top: 50%;
-  opacity: 1;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
+#modal > label{
+    margin-bottom: 10px;
 }
-
-.popup .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 15px;
-  height: 15px;
-  background: #888;
-  color: #eee;
-  line-height: 15px;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
+#modal > input{
+    margin-bottom: 10px;
 }
-
-.popup > .form > h2 {
-  text-align: center;
-  color: #222;
-  margin: 10px 0px 20px;
-  font-size: 25px;
-}
-
-.popup > .form > .form-element {
-  margin: 15px 0px;
-}
-
-.popup > .form > .form-element > label {
-  font-size: 14px;
-  color: #222;
-}
-
-.popup > .form > .form-element > input {
-  margin-top: 5px;
-  display: block;
-  width: 100%;
-  padding: 10px;
-  outline: none;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-}
-
-.form-element button {
-  width: 100%;
-  height: 40px;
-  background: #222;
-  color: #f5f5f5;
-  font-size: 16px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
-/*# sourceMappingURL=index.css.map */

@@ -3,25 +3,39 @@
         <link rel="stylesheet" href="./index.css">
     </head>
     <body>
-        <div class="center">
-            <button id="show-login">Login</button>
-        </div>
-        <div class="popup">
-            <div class="close-btn">&times;</div>
-            <div class="form">
-                <h2>Log in</h2>
-                <div class="form-element">
-                    <label for="Email">Email</label>
-                    <input type="text" id="email" placeholder="Enter email">
-                </div>
-                <div class="form-element">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter password">
-                </div>
-                <div class="form-element">
-                    <button id="sign-in">Sign in</button>
-                </div>
+        <div id="modal">
+            <label>Username</label>
+            <input type="text" id="admin">
+            <label>Password</label>
+            <input type="password" id="password">
+            <div style="text-align: center;">
+                <button id="login">Login</button>
             </div>
+        </div>
+        <div class="layout">
+            <form class="studentForm">
+                <div>
+                    <label>CMND</label>
+                    <input type="text" id="cmnd">
+                </div>
+                <div>
+                    <label>Name</label>
+                    <input type="text" id="name">
+                </div>
+                <div>
+                    <label>Birthday</label>
+                    <input type="date" id="birthday">
+                </div>
+                <div>
+                    <label>Phone</label>
+                    <input type="text" id="phone">
+                </div>
+                <div id="myButtons">
+                    <button id="submit">Submit</button>
+                    <button id="logout">Logout</button>
+                </div>
+            </form>
+            <table id="myTable"></table>
         </div>
         <script src="./index.js"></script>
     </body>

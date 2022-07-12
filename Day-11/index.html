@@ -1,18 +1,52 @@
-<htnl>
+<html>
     <head>
-        <title>Form Validation</title>
+        <title>Form</title>
+        <link rel="stylesheet" href="./index.css">
     </head>
     <body>
-        <form>
-            <label>Username</label>
-            <input id="username" type="text" name="username"></input>
+        <div>
             <label>Email</label>
-            <input id="email" type="email" name="email"></input>
-            <!-- <label>Password</label>
-            <input id="password" type="text" name="password"></input> -->
-            <button id="submit">Submit</button>
-           
-            <script src="./index.js"></script>
-        </form>
+            <input id="email" type="email" name="email">
+        </div>
+        <div>
+            <label>Birthday</label>
+            <input id="birthday" type="date" name="birthday">
+        </div>
+        <div>
+            <label>Phone</label>
+            <input id="phoneNumber" name="phoneNumber">
+        </div>
+        <hr>
+        <div>
+            <label id="gender">Gender</label>
+            <br>
+            <input type="radio" name="gender" value="male">
+            <label>Male</label>
+            <input type="radio" name="gender" value="female">
+            <label>Female</label>
+        </div>
+        <hr>
+        <div>
+            <label id="course">Course</label>
+            <br>
+            <input type="checkbox" name="course" value="reactjs">
+            <label>ReactJS</label>
+            <input type="checkbox" name="course" value="angular">
+            <label>Angular</label>
+            <input type="checkbox" name="course" value="vue">
+            <label>VUE</label>
+        </div>
+        <hr>
+        <div>
+            <label>Choose a class</label><br>
+            <select id="classes" name="classes">
+                <option value="FED01">FED01</option>
+                <option value="FED02">FED02</option>
+                <option value="FED03">FED03</option>
+            </select>
+        </div>
+        <hr>
+        <button id="submit">Submit</button>
+        <script src="./index.js"></script>
     </body>
-</htnl>
+</html>
