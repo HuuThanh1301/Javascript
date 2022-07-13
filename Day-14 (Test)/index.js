@@ -7,10 +7,6 @@ const correctAnswer = ['Loc', 'cho', 'chim'];
 const $ = (x) => document.querySelector(x);
 const $All = (x) => document.querySelectorAll(x);
 
-
-
-// localStorage.setItem('ques-num', x);
-
 const displayQuestion = (x) => {
     document.getElementById('question').innerHTML = questionList[x];
 }
@@ -24,32 +20,48 @@ const displayAnswer = (x) => {
 
 localStorage.setItem('ques', 0);
 
-let questionNum = localStorage.getItem('ques');
-
 const display = () => {
-    displayQuestion(questionNum);
-    displayAnswer(questionNum);
-    const listOfChoice = $All('div[name="choice"]');
-    console.log(listOfChoice);
-    listOfChoice.forEach(element => {
-        element.addEventListener('click', e => {
-            if(e.target.innerHTML === correctAnswer[questionNum]){
-                localStorage.setItem('ques', parseInt(questionNum) + 1);
-            }
-            else{
-                return alert('Tro choi ket thuc');
-            }
-        })
-    })
+    let ques = parseInt(localStorage.getItem('ques'));
+    if(ques < 3){
+        displayQuestion(ques);
+        displayAnswer(ques);
+        localStorage.setItem('ques', ques + 1);
+    }
 }
 
-const totalDisplay = () => {
-    for(let i = 0; i < 3; i++){
-        display();
-    }
-};
+displayQuestion(0);
+displayAnswer(0);
 
-totalDisplay();
+    let i = 0;
+    const max_question = 3;
+    const choiceList = $All('div[name="choice"]');
+    [...choiceList].forEach(element => {
+        element.addEventListener('click', e => {
+            if(e.target.innerHTML === correctAnswer[i]){
+                if(i != max_question - 1){
+                    displayQuestion(i+1);
+                    displayAnswer(i+1);
+                    i+=1;
+                }
+                else{
+                    return alert('Chuc mung, ban da tro thanh trieu phu');
+                }
+            }
+            else{
+                alert('Tro choi ket thuc!');
+            }
+        })
+    }); 
+
+    $('#next').onclick = (e) => {
+        e.preventDefault();
+        if($('#playername').value !== ''){
+            $('#modal').style.display = 'none';
+            $('#layout').style.display = 'block';
+            alert('Chao mung ' + $('#playername').value + ' da den voi ai la trieu phu!');
+        }
+    }
+
 
 
 

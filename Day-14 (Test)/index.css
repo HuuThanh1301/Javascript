@@ -3,31 +3,58 @@
     padding: 0;
     margin: 0;
 }
-
+#modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#playername{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 60%;
+    text-align: center;
+}
 #layout{
     position: fixed;
     width: 40%;
-    height: 20%;
+    height: 17%;
     border: 1px solid black;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px;
-    /* display: none; */
+    border-radius: 10px;
+    display: none;
 }
 
 #question{
   text-align: center;
+  margin-bottom: 15px;
 }
 
 #row1, #row2{
   display: flex;
   justify-content: space-evenly;
 }
+#row1{
+    margin-bottom: 20px;
+}
 
 #a, #b, #c, #d {
   border: 1px solid black;
   padding: 5px;
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 #a:hover, #b:hover, #c:hover, #d:hover{
