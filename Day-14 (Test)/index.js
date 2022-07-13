@@ -49,6 +49,7 @@ displayAnswer(0);
             }
             else{
                 alert('Tro choi ket thuc!');
+                window.location.reload();
             }
         })
     }); 
