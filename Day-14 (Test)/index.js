@@ -65,6 +65,9 @@ displayAnswer(0);
 
     $('#skip').onclick = (e) => {
         e.preventDefault();
+        if($('#fifty').style.display === 'none'){
+            [...$All('div[name="choice"]')].forEach(item => item.style.display = 'block');
+        }
         $('#skip').style.display = 'none';
         displayQuestion(i+1);
         displayAnswer(i+1);
@@ -73,7 +76,6 @@ displayAnswer(0);
 
     $('#fifty').onclick = (e) => {
         e.preventDefault();
-        // console.log('haha', $('#fifty').style.display);
         console.log(correctAnswer[i]);
         const wrongAnswer = [...$All('div[name="choice"]')].filter(item => item.innerHTML !== correctAnswer[i]);
         const shuffled_wrongAnswer = wrongAnswer.sort(() => 0.5 - Math.random());
