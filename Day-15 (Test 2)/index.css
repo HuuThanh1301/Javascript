@@ -83,3 +83,14 @@ button:hover{
     right: 1%;
     cursor: pointer;
 }
+
+#notify > div{
+   margin-left: 40%;
+   padding: 5px;
+   font-weight: bold;
+   color: rgb(25, 12, 169);
+}
+
+#notify{
+    margin-bottom: 20px;
+}

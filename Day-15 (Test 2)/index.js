@@ -18,7 +18,17 @@ const formatDate = (remindDate) => {
 }
 let remindList = getData('list');
 
+const notifyDate = () => {
+    const notifyList = remindList.filter(item => isToday(new Date(item.date)));
+    let contentList = '';
+    notifyList.forEach(item => {
+        contentList += `<div>Hom nay ${item.content} day nhe</div>`;
+    });
+    $('notify').innerHTML = contentList;
+}
+
 const displayList = () => {
+    notifyDate();
     if(remindList.length !== 0) {
         let text = '';
         remindList.forEach(item => {
@@ -30,10 +40,21 @@ const displayList = () => {
         });
         $('myList').innerHTML = text;
     }
-    return;
+    let deleteButtons = document.querySelectorAll('.delete');
+    [...deleteButtons].forEach(item => {
+        item.addEventListener('click', () => {
+            console.log(item.getAttribute('data-content'), item.getAttribute('data-date'));
+            remindList = remindList.filter(element => element.content !== item.getAttribute('data-content') && element.date !== item.getAttribute('data-date'));
+            console.log(remindList);
+            item.parentElement.style.display = 'none';
+            setData('list', remindList);
+        })
+    })
+
 }
 
 displayList();
+
 
 $('save').onclick = () => {
     const remindDateString = $('remind_date').value;
@@ -65,13 +86,5 @@ $('save').onclick = () => {
 
 }
 
-// let deleteButtons = document.querySelectorAll('.delete');
-// [...deleteButtons].forEach(item => {
-//     item.addEventListener('click', () => {
-//         console.log(item.getAttribute('data-content'), item.getAttribute('data-date'));
-//         remindList = remindList.filter(element => element.content !== item.getAttribute('data-content') && element.date !== item.getAttribute('data-date'));
-//         console.log(remindList);
-//         item.parentElement.style.display = 'none';
-//         setData('list', remindList);
-//     })
-// })
+
+
