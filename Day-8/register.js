@@ -5,5 +5,5 @@ document.getElementById('register').onclick = (e) => {
     const age = document.getElementById("age").value;
     const phone = document.getElementById("phone").value;
 
-    location.href = `http://127.0.0.1:5500/courses.html?email=${email}&name=${name}&age=${age}&phone=${phone}`
+    location.href = `https://huuthanh1301.github.io/Javascript/courses.html?email=${email}&name=${name}&age=${age}&phone=${phone}`
 }

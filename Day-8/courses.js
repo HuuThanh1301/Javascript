@@ -28,5 +28,5 @@ document.querySelector('button[type="submit"]').onclick = e => {
     const queryParameter = location.search;
 
   
-    location.href = `http://127.0.0.1:5500/checkout.html${queryParameter}&money=${money}`;
+    location.href = `https://huuthanh1301.github.io/Javascript/checkout.html${queryParameter}&money=${money}`;
 }

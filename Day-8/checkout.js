@@ -26,6 +26,6 @@ document.querySelector('button[type="submit"]').onclick = e => {
     else{
         alert('Coupon does not exist');
     }
-    location.href = 'http://127.0.0.1:5500/register.html';
+    location.href = 'https://huuthanh1301.github.io/Javascript/register.html';
   
 }
