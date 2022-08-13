@@ -1,0 +1,33 @@
+{
+  "studentList": [
+    {
+      "id": 1,
+      "name": "B",
+      "phoneNumber": "0977323586",
+      "email": "B@gmail.com",
+      "birthday": "13/01/1995"
+    },
+    {
+      "id": 2,
+      "name": "C",
+      "phoneNumber": "0805666777",
+      "email": "C@gmail.com",
+      "birthday": "13/01/1995",
+      "gender": "male"
+    },
+    {
+      "id": 4,
+      "name": "E",
+      "phone": "0905322455",
+      "email": "E@gmail.com",
+      "birthday": "06/05/1999"
+    },
+    {
+      "id": 3,
+      "name": "D",
+      "phone": "0905322455",
+      "email": "D@gmail.com",
+      "birthday": "06/05/1999"
+    }
+  ]
+}
